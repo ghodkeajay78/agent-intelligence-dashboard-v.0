@@ -1,0 +1,169 @@
+🧠📊 Full Prompt: Build the Agent Intelligence Dashboard
+Build a fully responsive, developer-centric web application called “Agent Intelligence Dashboard”, using React (Next.js) for the frontend and FastAPI for the backend. The dashboard should serve as a one-stop hub for exploring everything related to agentic AI development, with benchmarking as the central focus.
+
+Use Tailwind CSS for styling and optionally integrate shadcn/ui for beautiful and responsive UI components.
+
+The dashboard should be modular, with clean sections, support for mobile/tablet/desktop, and use local JSON data for now, simulating future API-based updates. Benchmark data should be front-and-center, with expandable details on click.
+
+🧩 Section Layout & Content
+🔷 1. Hero Section (Welcome Panel)
+Title: Agent Intelligence Dashboard
+
+Subtitle: Explore everything about AI agents: benchmarks, models, types, tools, and use cases.
+
+Buttons: “Explore Benchmarks” | “Evaluate Your Agent”
+
+Background gradient or soft agent illustration (optional)
+
+🟦 2. Benchmark Explorer (CENTRAL SECTION)
+🧠 The most important section — allows users to compare and explore real agent benchmark data.
+
+🔹 Visual Format:
+Data-first table with expandable rows
+
+Columns:
+
+Benchmark Name (clickable)
+
+Tags (e.g., Reasoning, Tools, Multi-Agent)
+
+Top Models (GPT-4, Claude, Gemini, etc.)
+
+Scores (Bar chart or numbers)
+
+Last Updated
+
+“More Info” button
+
+🔹 On Click of Benchmark Name / Button:
+Expand/collapse description
+
+Show:
+
+What the benchmark measures
+
+Who created it
+
+Evaluation methods
+
+Sample tasks
+
+Paper + repo links
+
+🔹 Filter/Sort:
+By task type, model score, date updated
+
+🟨 3. Model vs Task Matrix (Comparison Tool)
+Interactive table showing which models perform best for which kinds of agent tasks.
+
+Columns:
+Tasks (Reasoning, Tool Use, Web Search, Planning)
+
+Rows: Models (GPT-4, Claude, Gemini, Mistral)
+
+Cells:
+Score (numeric or ✅ / ⚠️ / ❌)
+
+Tooltip with benchmark data source
+
+🟩 4. Agent Evaluator Module (Coming Soon)
+Placeholder module where users will eventually upload their agent and benchmark it.
+
+UI:
+Card with “Upload Agent” disabled or locked
+
+Description: “Coming soon: evaluate your LangChain, Flowise, or AutoGen agents.”
+
+Input field for email: “Notify me when this is ready”
+
+🟪 5. Foundation Model Evaluation Benchmarks (HELM, AGIEval, etc.)
+Shows how base models like GPT-4 and Claude perform in general model benchmarks before being used in agents.
+
+Table Format:
+Rows: Models
+
+Columns: HELM, AGIEval, OpenCompass, MMLU
+
+Cells: Score + qualitative indicator
+
+“More Info” button expands to explain each benchmark
+
+🟧 6. Agent Types Explorer
+Explains different types of AI agents with diagrams/examples.
+
+Include:
+Reactive vs Proactive Agents
+
+Tool-Using Agents
+
+Human-in-the-Loop Agents
+
+Multi-Agent Systems (MAS)
+
+Autonomous Task Planners
+
+🟥 7. Agent Development Checklist (Visual Guide)
+Visual steps a developer should follow when building an agent.
+
+Steps:
+Define Problem
+
+Choose Base Model
+
+Task Decomposition
+
+Tool Selection
+
+Memory Strategy
+
+Reasoning/Planning Loop
+
+Evaluation Strategy
+
+UX Layer (CLI, Web, Bot)
+
+Hosting and Monitoring
+
+🟫 8. Framework & Tool Comparison
+Table comparing LangChain, AutoGen, OpenAI SDK, CrewAI, Flowise, etc.
+
+Attributes:
+Tool Support
+
+Memory Management
+
+Multi-Agent Support
+
+UI Support
+
+Eval Integration
+
+Best For
+
+🔵 9. Use Case Gallery
+Cards or list of real-world agent use cases.
+
+Show:
+In-house examples (recruiter agent, research assistant, clinical research agent)
+
+Industry examples (Rabbit R1, Claude, Perplexity AI, Devika)
+
+Each use case: brief + tools used
+
+🟤 10. Insights Feed (Coming Soon)
+Placeholder section for future real-time updates.
+
+Cards (disabled):
+“Claude 3 surpasses GPT-4 on GAIA Web tasks”
+
+“New agent benchmark released by Meta”
+
+⚙️ Tech Requirements
+Area	Stack
+Frontend	Next.js, Tailwind CSS, shadcn/ui
+Backend	FastAPI with static JSON endpoints
+Interactivity	Use expandable cards, tooltips, filters
+Responsiveness	Fully responsive layout
+Data	For now, load from /data/*.json files
+Folder Structure	Follow modular GitHub-style directory layout
+Dark Mode	Optional

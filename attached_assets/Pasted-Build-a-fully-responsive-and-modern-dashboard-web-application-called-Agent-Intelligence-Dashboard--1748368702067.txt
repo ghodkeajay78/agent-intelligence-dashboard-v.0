@@ -1,0 +1,96 @@
+Build a fully responsive and modern dashboard web application called "Agent Intelligence Dashboard" using Next.js + Tailwind CSS + shadcn/ui (or other modern React UI kits). The dashboard should focus on providing insights for agentic AI development with benchmarking and model evaluation.
+
+✨ Key Sections:
+1. Hero Section (Intro)
+Title: "Agent Intelligence Dashboard"
+
+Subtitle: "Your one-stop hub for agent development, benchmarking, and model evaluation."
+
+CTA buttons: “Explore Benchmarks” and “Evaluate Your Agent”
+
+2. Benchmark Results (Agent-Centric Benchmarks)
+Show a table or card list of 3 core benchmarks: AgentBench, GAIA, AutoGenBench
+
+For each benchmark:
+
+Show title, tags (e.g. Reasoning, Tools), last updated date
+
+A “More Info” or “Expand” button showing:
+
+What it evaluates
+
+Who made it
+
+How it evaluates agents
+
+What metrics it outputs
+
+Top model scores (GPT-4, Claude, etc.)
+
+Link to paper and repo
+
+Add filtering by tags (e.g., Tool Use, Web, Reasoning)
+
+3. Model vs Task Matrix
+Interactive heatmap or grid showing:
+
+Rows: Models (GPT-4, Claude, Gemini, Mistral)
+
+Columns: Tasks (Reasoning, Tool Use, Web Search, Planning)
+
+Cell: Score or indicator (color/emoji)
+
+On click of a cell → show benchmark evidence (e.g., “GAIA: GPT-4 scored 94% on Web tasks”)
+
+4. Agent Evaluator Module (Placeholder)
+Card UI for “Upload Your Agent”
+
+Description: “Coming soon: Evaluate your Flowise, LangChain, or AutoGen agent using industry benchmarks.”
+
+Email input field (optional) to get notified
+
+5. Model Evaluation Benchmarks (Base Model Insight)
+Section with table or cards showing benchmarks:
+
+HELM
+
+OpenCompass
+
+AGIEval
+
+MMLU (optional)
+
+Table: Models × Benchmarks
+
+Columns: HELM, AGIEval, MMLU
+
+Rows: GPT-4, Claude 3, Gemini 1.5, Mistral
+
+Cells: Score or qualitative emoji (✅, ⚠️, ❌)
+
+On click of a cell → show summary and source link
+
+6. Insights Feed (Placeholder)
+Section titled “Benchmark Intelligence Feed”
+
+Placeholder cards with fake update cards (e.g., “Claude-3 overtakes GPT-4 on GAIA Web task!”)
+
+🧱 Tech Requirements:
+Use React with Next.js
+
+Tailwind CSS for styling
+
+Modular layout
+
+Each section in separate component
+
+Sample data in local JSON files for now
+
+Add dark mode support
+
+Responsive layout (mobile-friendly)
+
+Do not build the data sync logic or actual API calls now — use static data.
+Add comments in code where real-time data sync or dynamic benchmarking will later be added.
+
+The goal is to deliver a complete UI prototype of the Agent Intelligence Dashboard.
