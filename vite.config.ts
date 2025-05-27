@@ -4,7 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-// Polyfill __dirname for ESM
+// Polyfill for __dirname in ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -14,31 +14,33 @@ export default defineConfig(async () => {
     runtimeErrorOverlay(),
   ];
 
-  // Optional plugin: only load if REPL_ID is defined (e.g., on Replit)
+  // Optional: add Replit-specific plugin only when available
   if (process.env.NODE_ENV !== "production" && process.env.REPL_ID) {
-    const { cartographer } = await import("@replit/vite-plugin-cartographer");
-    plugins.push(cartographer());
+    try {
+      const { cartographer } = await import("@replit/vite-plugin-cartographer");
+      plugins.push(cartographer());
+    } catch (err) {
+      console.warn("Cartographer plugin could not be loaded:", err.message);
+    }
   }
 
-  // Define safe fallback paths
-  const clientSrc = path.resolve(__dirname, "client", "src");
-  const shared = path.resolve(__dirname, "shared");
-  const attachedAssets = path.resolve(__dirname, "attached_assets");
-  const rootPath = path.resolve(__dirname, "client");
-  const outDir = path.resolve(__dirname, "dist/public");
+  // Absolute paths using fallback-safe values
+  const clientPath = "client";
+  const sharedPath = "shared";
+  const assetsPath = "attached_assets";
 
   return {
     plugins,
     resolve: {
       alias: {
-        "@": clientSrc,
-        "@shared": shared,
-        "@assets": attachedAssets,
+        "@": path.resolve(__dirname, clientPath, "src"),
+        "@shared": path.resolve(__dirname, sharedPath),
+        "@assets": path.resolve(__dirname, assetsPath),
       },
     },
-    root: rootPath,
+    root: path.resolve(__dirname, clientPath),
     build: {
-      outDir: outDir,
+      outDir: path.resolve(__dirname, "dist/public"),
       emptyOutDir: true,
     },
   };
